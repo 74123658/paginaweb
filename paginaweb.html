@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTIONES LEGALES FISCALES - Capacitación MiPymes</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de jsPDF para generación de PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Carga de los iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-blue': '#033f63', // Azul (Primario)
+                        'custom-gold': '#9A7026', // Dorado (Secundario)
+                        'custom-beige': '#E7E489', // Beige (Acento)
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para el fondo principal */
+        body {
+            background-color: #f4f4f0; 
+        }
+        /* Estilo para el logo (asegura que la imagen encaje) */
+        .logo-img {
+            display: block;
+            width: 80px; /* Tamaño fijo asignado */
+            height: 80px; /* Tamaño fijo asignado */
+            object-fit: contain; /* Asegura que la imagen completa sea visible sin cortar */
+            margin-bottom: 8px;
+            border-radius: 50%; /* Opcional: para logos circulares */
+            background-color: #E7E489; /* Fondo visible si la imagen es PNG transparente */
+        }
+    </style>
+</head>
+<body class="font-sans text-custom-blue">
+
+    <!-- CABECERA Y LOGO -->
+    <header class="bg-custom-blue text-white py-6 shadow-xl">
+        <div class="container mx-auto px-4 flex flex-col items-center">
+            
+            <!-- Logo de Imagen (URL ACTUALIZADA) -->
+            <img src="https://github.com/74123658/Gestionlegal/blob/main/ChatGPT%20Image%209%20dic%202025,%2012_36_16.png?raw=true" 
+                 alt="Logo GESTIONES LEGALES FISCALES" 
+                 class="logo-img">
+            
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-custom-beige text-center mt-2">
+                GESTIONES LEGALES FISCALES
+            </h1>
+            <p class="text-xl mt-1 text-custom-beige">Impulsando el crecimiento de tu MiPyme</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <!-- SECCIÓN INSTITUCIONAL -->
+        <section id="institucional" class="bg-white p-6 md:p-10 rounded-xl shadow-lg mb-12 border-t-8 border-custom-gold">
+            <h2 class="text-3xl font-bold mb-6 border-b-2 pb-2 border-custom-blue">Nuestra Consultoría</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-custom-gold mb-2">Misión</h3>
+                    <p class="text-gray-700">Facilitar a los dueños de MiPymes el conocimiento y las herramientas necesarias para navegar el complejo marco fiscal, laboral y digital de México, asegurando su cumplimiento y crecimiento sostenido.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-custom-gold mb-2">Visión</h3>
+                    <p class="text-gray-700">Ser la consultoría líder en capacitación para MiPymes, reconocida por la excelencia, la personalización de estrategias y el impacto positivo en la estructura y rentabilidad de nuestros clientes.</p>
+                </div>
+                <div class="col-span-full">
+                    <h3 class="text-xl font-semibold text-custom-gold mb-2">Valores</h3>
+                    <p class="text-gray-700">Integridad, Innovación, Compromiso Empresarial, Personalización y Excelencia Educativa.</p>
+                    
+                    <!-- OBJETIVO -->
+                    <h3 class="text-xl font-semibold text-custom-gold mt-4 mb-2">Objetivo</h3>
+                    <p class="text-gray-700">Capacitar a empresari@s para fortalecer su negocio a traves de mentorias, asistencia tecnica y logren automatizar sus operaciones en la nueva era digital permitiendoles escalar sus objetivos a corto y largo plazo.</p>
+
+                    <!-- PROPUESTA DE VALOR -->
+                    <h3 class="text-xl font-semibold text-custom-gold mt-4 mb-2">Propuesta de Valor</h3>
+                    <p class="text-gray-700 italic border-l-4 border-custom-gold pl-4 bg-custom-beige/30 p-3 rounded-md">
+                        Empresari@, deja de vivir con miedo contante ante autoridades fiscales. Te ofrecemos asesoria Legal, Fiscal y Digital. Transforma tu angustia en tranquilidad y protege tu patrimonio o negocio, resolviendo tu situacion. Te ofrecemos acompañamiento en prevencion del cumplimiento de obligaciones, convirtiendo la incertidumbre en certeza. Recupera la confianza y concentrate en lo que realmente importa: **"HACER CRECER TU NEGOCIO"**
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CURSOS -->
+        <section id="cursos" class="mb-12">
+            <h2 class="text-4xl font-extrabold text-center mb-10 text-custom-blue">Nuestros Cursos Estructurales</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Curso 1: Materia Fiscal Legal -->
+                <div class="bg-white p-6 rounded-xl shadow-2xl border-t-4 border-custom-blue transition duration-300 hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-custom-blue mb-3">1. Actualización Fiscal 2026</h3>
+                    <span class="text-custom-gold font-bold text-lg block mb-4">¡Evita Multas y Optimiza Impuestos!</span>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                        <li><i class="fas fa-file-invoice-dollar mr-2 text-custom-gold"></i>Dominio total de las Reformas Fiscales 2026.</li>
+                        <li><i class="fas fa-balance-scale mr-2 text-custom-gold"></i>Regularización de obligaciones CFF hasta 2025.</li>
+                        <li><i class="fas fa-gavel mr-2 text-custom-gold"></i>Blindaje legal para tu empresa ante el SAT.</li>
+                    </ul>
+                    <div class="mt-6 bg-custom-beige p-3 rounded-lg">
+                        <p class="text-xl font-extrabold text-custom-blue">Precio: $ 1,500.00</p>
+                        <p class="text-xs italic text-gray-700">Incluye Diagnóstico y Estrategia de Solución Personalizada.</p>
+                    </div>
+                </div>
+
+                <!-- Curso 2: Derechos y Obligaciones Laborales -->
+                <div class="bg-white p-6 rounded-xl shadow-2xl border-t-4 border-custom-blue transition duration-300 hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-custom-blue mb-3">2. Nuevo Marco Laboral Efectivo</h3>
+                    <span class="text-custom-gold font-bold text-lg block mb-4">¡Crea Contratos Imparables y Evita Demandas!</span>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                        <li><i class="fas fa-users mr-2 text-custom-gold"></i>Entendimiento de las últimas Reformas LFT.</li>
+                        <li><i class="fas fa-handshake mr-2 text-custom-gold"></i>Gestión correcta de contratos y finiquitos.</li>
+                        <li><i class="fas fa-user-shield mr-2 text-custom-gold"></i>Equilibrio perfecto entre derechos y obligaciones.</li>
+                    </ul>
+                    <div class="mt-6 bg-custom-beige p-3 rounded-lg">
+                        <p class="text-xl font-extrabold text-custom-blue">Precio: $ 1,300.00</p>
+                        <!-- Texto actualizado -->
+                        <p class="text-xs italic text-gray-700">Incluye guia de Control Interno laboral</p>
+                    </div>
+                </div>
+
+                <!-- Curso 3: Seguridad Digital -->
+                <div class="bg-white p-6 rounded-xl shadow-2xl border-t-4 border-custom-blue transition duration-300 hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-custom-blue mb-3">3. Ciberseguridad para MiPymes</h3>
+                    <span class="text-custom-gold font-bold text-lg block mb-4">¡Tu Empresa a Salvo de Ataques Cibernéticos!</span>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                        <li><i class="fas fa-shield-alt mr-2 text-custom-gold"></i>Estrategias de prevención anti-phishing y malware.</li>
+                        <li><i class="fas fa-user-graduate mr-2 text-custom-gold"></i>Capacitación especializada para tus empleados (foco inicial de riesgo).</li>
+                        <li><i class="fas fa-laptop-code mr-2 text-custom-gold"></i>Evaluación de vulnerabilidades de tu red.</li>
+                    </ul>
+                    <div class="mt-6 bg-custom-beige p-3 rounded-lg">
+                        <p class="text-xl font-extrabold text-custom-blue">Precio: $ 1,500.00</p>
+                        <p class="text-xs italic text-gray-700">Costo por capacitación y prevención hasta 3 empleados.</p>
+                    </div>
+                    <p class="text-xs mt-3 text-red-600 font-semibold">Bono: Prueba gratis de software por 30 días + 20% de bonificación en licencia anual.</p>
+                </div>
+            </div>
+
+            <!-- Frase sumando el costo total -->
+            <p class="text-center text-xl font-bold text-custom-blue mt-8 mb-4">
+                El costo total de los tres cursos por separado asciende a: <span class="text-red-600 line-through">$ 4,300.00</span>
+            </p>
+
+            <!-- Promoción de Paquete (eliminamos el mt-10 para que siga al texto) -->
+            <div class="p-6 md:p-8 bg-custom-gold text-white rounded-xl shadow-2xl text-center">
+                <h3 class="text-3xl md:text-4xl font-extrabold mb-2">¡OFERTA ESPECIAL EN PAQUETE!</h3>
+                <p class="text-xl mb-4">Adquiere los tres cursos (Fiscal, Laboral y Digital) y paga solo:</p>
+                <p class="text-5xl font-bold bg-custom-blue inline-block p-4 rounded-full shadow-lg">$ 3,000.00</p>
+            </div>
+            
+            <p class="text-center text-sm mt-4 text-gray-700 font-semibold">A todos nuestros precios de facturación se agregará el Impuesto al Valor Agregado (IVA).</p>
+        </section>
+
+        <!-- NUEVA SECCIÓN: POLÍTICA DE PRIVACIDAD (INICIALMENTE OCULTA) -->
+        <section id="privacy-policy" class="bg-white p-6 md:p-10 rounded-xl shadow-lg mb-12 hidden border-t-8 border-custom-blue">
+            <h2 class="text-3xl font-bold mb-6 text-custom-blue">Política de Privacidad</h2>
+            <!-- Mock Content - Boilerplate -->
+            <p class="text-gray-700 mb-4">
+                **GESTIONES LEGALES FISCALES** se compromete a proteger la privacidad de sus usuarios. Esta política explica cómo recopilamos, utilizamos y protegemos su información personal, cumpliendo con la legislación mexicana vigente.
+            </p>
+            <h3 class="text-xl font-semibold text-custom-gold mb-2">1. Información Recopilada</h3>
+            <p class="text-gray-700 mb-4">
+                Recopilamos su nombre, correo electrónico, actividad económica, número de WhatsApp, comentarios y metadatos de registro. También almacenamos el análisis de riesgo estructural generado por nuestra herramienta de IA (Gemini API) para control interno y fines de contacto.
+            </p>
+            <h3 class="text-xl font-semibold text-custom-gold mb-2">2. Uso y Finalidad</h3>
+            <p class="text-gray-700 mb-4">
+                La información se utiliza para:
+                <ul class="list-disc list-inside ml-4 text-gray-700">
+                    <li>Administrar su inscripción y brindarle el servicio contratado.</li>
+                    <li>Contactarlo para resolver dudas o confirmar pagos y horarios de consultoría.</li>
+                    <li>Mejorar nuestros servicios y personalizar la experiencia de consultoría.</li>
+                    <li>Cumplir con obligaciones legales y de seguridad.</li>
+                </ul>
+                Sus datos no serán compartidos con terceros sin su consentimiento, salvo las excepciones legales aplicables.
+            </p>
+            <h3 class="text-xl font-semibold text-custom-gold mb-2">3. Derechos ARCO</h3>
+            <p class="text-gray-700">
+                Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales. Para ejercer cualquiera de estos derechos, por favor envíe una solicitud detallada al correo electrónico **preocupacionesfiscales@gmail.com**.
+            </p>
+        </section>
+
+        <!-- SECCIÓN DE FORMULARIO DE INSCRIPCIÓN -->
+        <section id="inscripcion" class="bg-custom-blue p-6 md:p-10 rounded-xl shadow-2xl mb-12">
+            <h2 class="text-3xl font-bold text-custom-beige mb-6 text-center">Formulario de Informes / Inscripción</h2>
+            
+            <!-- Mensajes de Estado -->
+            <div id="status-message" class="hidden p-4 mb-4 text-sm font-semibold text-center rounded-lg" role="alert"></div>
+
+            <form id="inscripcion-form" class="space-y-4">
+                
+                <!-- Fila 1: Nombre y Actividad -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="nombre" class="block mb-2 text-sm font-medium text-custom-beige">Nombre Completo <span class="text-red-400">*</span></label>
+                        <input type="text" id="nombre" name="nombre" class="bg-white border border-custom-gold text-custom-blue text-sm rounded-lg focus:ring-custom-gold focus:border-custom-gold block w-full p-2.5" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div>
+                        <label for="actividad" class="block mb-2 text-sm font-medium text-custom-beige">Actividad o Giro Económico <span class="text-red-400">*</span></label>
+                        <input type="text" id="actividad" name="actividad" class="bg-white border border-custom-gold text-custom-blue text-sm rounded-lg focus:ring-custom-gold focus:border-custom-gold block w-full p-2.5" placeholder="Ej: Tienda de Abarrotes / Consultoría" required>
+                    </div>
+                </div>
+
+                <!-- Fila 2: Correo y WhatsApp -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-custom-beige">Correo Electrónico <span class="text-red-400">*</span></label>
+                        <input type="email" id="email" name="email" class="bg-white border border-custom-gold text-custom-blue text-sm rounded-lg focus:ring-custom-gold focus:border-custom-gold block w-full p-2.5" placeholder="ejemplo@empresa.com" required>
+                    </div>
+                    <div>
+                        <label for="whatsapp" class="block mb-2 text-sm font-medium text-custom-beige">Número WhatsApp <span class="text-red-400">*</span></label>
+                        <!-- ACTUALIZACIÓN DEL PATRÓN A EXACTAMENTE 10 DÍGITOS -->
+                        <input type="tel" id="whatsapp" name="whatsapp" class="bg-white border border-custom-gold text-custom-blue text-sm rounded-lg focus:ring-custom-gold focus:border-custom-gold block w-full p-2.5" placeholder="55 1234 5678 (wa.link/o1es2p)" pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+                </div>
+
+                <!-- Fila 3: Comentarios -->
+                <div>
+                    <label for="comentarios" class="block mb-2 text-sm font-medium text-custom-beige">Curso/Tema de Interés <span class="text-red-400">*</span></label>
+                    <textarea id="comentarios" name="comentarios" rows="4" class="bg-white border border-custom-gold text-custom-blue text-sm rounded-lg focus:ring-custom-gold focus:border-custom-gold block w-full p-2.5" placeholder="Especifique el curso, paquete o tema que le interesa. (Ej: Paquete Completo)" required></textarea>
+                </div>
+                
+                <!-- Resultados del Análisis Gemini -->
+                <div id="analysis-result">
+                    <!-- Aquí se mostrará el resultado del análisis de riesgo -->
+                </div>
+                
+                <!-- Loader para el Análisis -->
+                <div id="analysis-loader" class="hidden text-center text-custom-beige pt-4">
+                    <i class="fas fa-spinner fa-spin mr-2"></i> Generando Análisis de Riesgo Estructural...
+                </div>
+
+                <!-- Checkbox de Aceptación de Políticas (ANTES DE BOTONES) -->
+                <div>
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5 mt-1">
+                            <input id="accept-policy" type="checkbox" required class="w-4 h-4 text-custom-gold bg-gray-100 border-gray-300 rounded focus:ring-custom-gold focus:ring-2">
+                        </div>
+                        <label for="accept-policy" class="ml-2 text-sm font-medium text-custom-beige">
+                            He leído y acepto la <a href="#" id="view-policy-link" class="text-custom-gold hover:underline font-bold transition duration-150">Política de Privacidad</a>. <span class="text-red-400">*</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                    <!-- Botón Gemini: Análisis de Riesgo -->
+                    <button type="button" id="btn-analyze-risk" class="w-full sm:w-1/3 text-custom-blue bg-custom-beige hover:bg-custom-gold hover:text-white focus:ring-4 focus:outline-none focus:ring-custom-gold font-bold rounded-lg text-lg px-5 py-3 text-center transition duration-150">
+                        <i class="fas fa-brain mr-2"></i> ✨ Analizar mi Riesgo Estructural
+                    </button>
+                    <!-- Botón Firebase: Generar Inscripción -->
+                    <button type="submit" id="btn-inscribir" class="w-full sm:w-1/3 text-custom-blue bg-custom-beige hover:bg-custom-gold hover:text-white focus:ring-4 focus:outline-none focus:ring-custom-gold font-bold rounded-lg text-lg px-5 py-3 text-center transition duration-150">
+                        <i class="fas fa-paper-plane mr-2"></i> Generar Inscripción
+                    </button>
+                    <!-- Botón PDF: Exportar Recibo -->
+                    <button type="button" id="btn-exportar" class="w-full sm:w-1/3 text-white bg-custom-gold hover:bg-custom-beige hover:text-custom-blue focus:ring-4 focus:outline-none focus:ring-custom-gold font-bold rounded-lg text-lg px-5 py-3 text-center transition duration-150" disabled>
+                        <i class="fas fa-file-pdf mr-2"></i> Exportar Recibo (PDF)
+                    </button>
+                </div>
+                
+                <p id="export-info" class="text-center text-sm text-custom-beige mt-2 hidden">¡Clic para exportar! El PDF se generará con los últimos datos registrados.</p>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER Y REDES SOCIALES -->
+    <footer class="bg-custom-blue py-6">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-custom-beige text-center md:text-left mb-4 md:mb-0">&copy; 2025 GESTIONES LEGALES FISCALES. Todos los derechos reservados.</p>
+            
+            <!-- Bloque de Contacto Centralizado -->
+            <div class="flex flex-col items-center mb-2 md:mb-0">
+                <!-- E-MAIL TEXTUAL CON ICONO -->
+                <div class="flex items-center text-custom-beige text-base mb-2">
+                    <i class="fas fa-envelope text-custom-gold mr-2"></i> 
+                    preocupacionesfiscales@gmail.com
+                </div>
+
+                <!-- ICONOS DE REDES SOCIALES -->
+                <div class="flex space-x-6 text-2xl">
+                    <!-- Icono de Facebook con el nuevo enlace -->
+                    <a href="https://www.facebook.com/preocupacionesfiscales" target="_blank" class="text-custom-beige hover:text-custom-gold transition duration-150" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <!-- Icono de WhatsApp con el nuevo enlace -->
+                    <a href="https://wa.link/o1es2p" target="_blank" class="text-custom-beige hover:text-custom-gold transition duration-150" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+             <!-- Domicilio de la consultoría agregado -->
+            <p class="text-custom-beige text-center text-sm">Manuel F Soto # 706, Colonia Centro, C.P 43600 Ciudad Tulancingo, Hgo.</p>
+        </div>
+    </footer>
+
+    <!-- Bloque de Script para Lógica y Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, addDoc, collection } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Constantes para el PDF y la App
+        const CLABE_BBVA = "012312015180517427";
+        const NOMBRE_CLABE = "LIC. MARIA ANGELICA MORENO SANCHEZ";
+        const LEYENDA_CONFIRMACION = "Confirmar el servicio contratado, comprobante de pago, día y hora en que tomará la consultoría o curso por e-mail.";
+        
+        // Configuración Global y Firebase
+        // OBTENIENDO CONFIGURACIONES DE LA PLATAFORMA (MANDATORIO)
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        // Inicialización de Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+        
+        // Habilitar logs de debug para Firestore (Recomendado)
+        setLogLevel('debug');
+        
+        // Referencias a elementos del DOM
+        const form = document.getElementById('inscripcion-form');
+        const statusMessage = document.getElementById('status-message');
+        const btnExportar = document.getElementById('btn-exportar');
+        const exportInfo = document.getElementById('export-info');
+        // Nuevas referencias para la funcionalidad Gemini
+        const btnAnalyze = document.getElementById('btn-analyze-risk');
+        const analysisResultDiv = document.getElementById('analysis-result');
+        const analysisLoader = document.getElementById('analysis-loader');
+        
+        // Nuevas referencias para la Política de Privacidad
+        const policySection = document.getElementById('privacy-policy');
+        const viewPolicyLink = document.getElementById('view-policy-link');
+
+
+        let isAuthReady = false;
+        let lastFormData = null; // Para guardar los datos ANTES de exportar (la última inscripción exitosa)
+        let lastAnalysisText = null; // Para guardar el análisis generado
+
+        // Constantes para la API de Gemini (MANDATORIO: dejar la clave vacía)
+        const GEMINI_API_KEY = "";
+        const GEMINI_MODEL = "gemini-2.5-flash-preview-09-2025";
+        const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
+        
+
+        // Función para mostrar mensajes de estado
+        const showStatus = (message, isSuccess) => {
+            statusMessage.textContent = message;
+            statusMessage.classList.remove('hidden', 'bg-red-200', 'text-red-800', 'bg-green-200', 'text-green-800');
+            if (isSuccess) {
+                statusMessage.classList.add('bg-green-200', 'text-green-800');
+                btnExportar.disabled = false;
+                exportInfo.classList.remove('hidden');
+            } else {
+                statusMessage.classList.add('bg-red-200', 'text-red-800');
+                btnExportar.disabled = true;
+                exportInfo.classList.add('hidden');
+            }
+        };
+
+        // ***********************************************
+        // NUEVA FUNCIÓN: DESHABILITAR EXPORTACIÓN AL EDITAR
+        // ***********************************************
+        const disableExportOnEdit = () => {
+            // Deshabilita el botón de exportar y oculta la nota
+            btnExportar.disabled = true;
+            exportInfo.classList.add('hidden');
+            
+            // Si el usuario comienza una nueva inscripción, borramos el análisis anterior
+            analysisResultDiv.innerHTML = '';
+            lastAnalysisText = null;
+            
+            // Ocultar mensaje de estado
+            statusMessage.classList.add('hidden');
+        };
+
+        // Listener para la mayoría de los cambios en el formulario
+        form.addEventListener('input', disableExportOnEdit); 
+        // ***********************************************
+
+
+        // 7. Listener para mostrar/ocultar Política de Privacidad
+        viewPolicyLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isHidden = policySection.classList.toggle('hidden');
+            
+            // Desplazar a la sección visible o al formulario si se oculta
+            if (!isHidden) {
+                policySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                viewPolicyLink.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+        });
+
+
+        // 1. Manejo de la Autenticación
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                // Intentar iniciar sesión anónimamente si no hay token o si falla el custom token
+                try {
+                    if (initialAuthToken) {
+                        await signInWithCustomToken(auth, initialAuthToken);
+                        console.log("Usuario autenticado con token personalizado.");
+                    } else {
+                        await signInAnonymously(auth);
+                        console.log("Usuario autenticado anónimamente.");
+                    }
+                } catch (error) {
+                    console.error("Error al autenticar:", error);
+                    showStatus("Error al iniciar sesión. Inténtelo de nuevo más tarde.", false);
+                }
+            }
+            isAuthReady = true;
+        });
+
+        // Helper para reintentos con backoff exponencial (ESTÁNDAR)
+        const exponentialBackoffFetch = async (url, options, maxRetries = 5, delay = 1000) => {
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.status === 429 && i < maxRetries - 1) {
+                        // Too many requests, retry after delay
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        delay *= 2; // Exponential increase
+                        continue;
+                    }
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response;
+                } catch (error) {
+                    if (i === maxRetries - 1) throw error;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                }
+            }
+        };
+
+
+        // 2. Función para Generar el PDF
+        const generarPDF = (data) => {
+            if (!data) {
+                showStatus("No hay datos recientes para generar el recibo.", false);
+                return;
+            }
+
+            // Uso del módulo jsPDF cargado desde CDN
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            doc.setFontSize(22);
+            doc.setTextColor('#033f63');
+            doc.text("RECIBO DE INSCRIPCIÓN / SOLICITUD DE INFORMES", 105, 20, null, null, "center");
+
+            doc.setFontSize(16);
+            doc.setTextColor('#9A7026');
+            doc.text("GESTIONES LEGALES FISCALES", 105, 30, null, null, "center");
+            
+            doc.setFontSize(10);
+            doc.setTextColor('#000000');
+            doc.text(`Fecha de Registro: ${new Date().toLocaleDateString('es-MX')}`, 10, 45);
+            doc.text(`ID de la Aplicación: ${appId}`, 10, 50);
+
+            doc.setDrawColor('#033f63');
+            doc.setLineWidth(0.5);
+            doc.line(10, 55, 200, 55); 
+
+            doc.setFontSize(12);
+            doc.setTextColor('#033f63');
+            let y = 65;
+            
+            // Función auxiliar para agregar texto con un formato de clave/valor
+            const addField = (label, value) => {
+                doc.setFont(undefined, 'bold');
+                doc.text(`${label}:`, 10, y);
+                doc.setFont(undefined, 'normal');
+                // Ajustar la posición horizontal para el valor para que quepa todo en una línea
+                doc.text(value, 60, y); 
+                y += 7;
+            }
+
+            addField("Nombre Completo", data.nombre);
+            addField("Actividad/Giro Económico", data.actividad);
+            addField("Correo Electrónico", data.email);
+            addField("Número WhatsApp", data.whatsapp);
+            addField("Curso/Tema de Interés", data.comentarios); // Ahora es el curso de interés
+            
+            y += 5;
+
+            // -----------------------------------------------------
+            // SECCIÓN DE ANÁLISIS DE RIESGO (Si existe)
+            // -----------------------------------------------------
+            if (data.analysis) {
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor('#033f63');
+                doc.text("Análisis de Riesgo Estructural (Recomendación)", 10, y);
+                y += 5;
+                doc.setFontSize(10);
+                doc.setFont(undefined, 'normal');
+                doc.setTextColor('#000000');
+                // Dividir el texto del análisis para que quepa
+                const analysisText = doc.splitTextToSize(data.analysis, 190);
+                doc.text(analysisText, 10, y + 2);
+                y += (analysisText.length * 4) + 5;
+                doc.setFontSize(12);
+            }
+
+            doc.setDrawColor('#9A7026');
+            doc.line(10, y, 200, y); 
+            y += 7;
+            
+            // -----------------------------------------------------
+            // SECCIÓN DE PAGO
+            // -----------------------------------------------------
+            doc.setFont(undefined, 'bold');
+            doc.setTextColor('#9A7026');
+            doc.text("Datos de Pago (Transferencia BBVA)", 10, y);
+            y += 7;
+
+            doc.setFont(undefined, 'bold');
+            doc.setTextColor('#033f63');
+            doc.text("CLABE Interbancaria:", 10, y);
+            doc.setFont(undefined, 'normal');
+            doc.text(CLABE_BBVA, 60, y);
+            y += 7;
+
+            doc.setFont(undefined, 'bold');
+            doc.text("A Nombre de:", 10, y);
+            doc.setFont(undefined, 'normal');
+            doc.text(NOMBRE_CLABE, 60, y);
+            y += 10;
+            
+            // Leyenda de confirmación
+            doc.setFontSize(9);
+            doc.setFont(undefined, 'italic');
+            const confirmacionText = doc.splitTextToSize(LEYENDA_CONFIRMACION, 190);
+            doc.text(confirmacionText, 10, y);
+            y += (confirmacionText.length * 4) + 5;
+            
+            doc.setFontSize(14);
+            doc.setFont(undefined, 'bold');
+            doc.setTextColor('#033f63');
+            doc.text("GRACIAS POR SU INTERÉS. EN BREVE NOS PONDREMOS EN CONTACTO.", 105, y, null, null, "center");
+
+            doc.save(`Recibo_Inscripcion_${data.nombre.replace(/\s/g, '_')}.pdf`);
+        };
+
+
+        // 3. Manejo de la Presentación (Submit)
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Validación de campos obligatorios (incluyendo el checkbox 'required' en HTML)
+            if (!form.checkValidity()) {
+                showStatus("Por favor, complete todos los campos obligatorios y acepte la Política de Privacidad.", false);
+                return;
+            }
+            
+            // Validación de 10 dígitos para WhatsApp (redundante pero seguro)
+            const whatsappInput = document.getElementById('whatsapp').value;
+            if (whatsappInput.length !== 10) {
+                showStatus("Por favor, ingrese exactamente 10 dígitos para el número de WhatsApp.", false);
+                return;
+            }
+
+
+            if (!isAuthReady || !auth.currentUser) {
+                showStatus("Esperando autenticación de usuario. Intente en unos segundos...", false);
+                return;
+            }
+
+            showStatus("Registrando inscripción...", true); // Muestra un mensaje temporal positivo
+
+            // Se incluye el texto del análisis Gemini en los datos de Firestore si existe
+            const analysisToSave = lastAnalysisText || "Análisis no generado.";
+
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                actividad: document.getElementById('actividad').value,
+                email: document.getElementById('email').value,
+                whatsapp: whatsappInput,
+                comentarios: document.getElementById('comentarios').value,
+                analysis: analysisToSave, // Guardamos el análisis
+                policy_accepted: true, // Registramos la aceptación
+                timestamp: new Date().toISOString(),
+                userId: auth.currentUser.uid,
+            };
+            
+            // Guardamos los datos localmente para el PDF (incluye el análisis)
+            lastFormData = formData; 
+
+            try {
+                // RUTA: /artifacts/{appId}/users/{userId}/enrollments
+                const userId = auth.currentUser.uid;
+                const enrollmentsCollectionRef = collection(db, `artifacts/${appId}/users/${userId}/enrollments`);
+
+                // Añadir documento a Firestore
+                await addDoc(enrollmentsCollectionRef, formData);
+
+                showStatus("¡Clic! Se ha inscrito correctamente. Puede exportar su recibo.", true);
+                
+                // Limpiar el formulario
+                form.reset(); 
+                // Limpiar el resultado del análisis Gemini y la variable local
+                analysisResultDiv.innerHTML = '';
+                lastAnalysisText = null;
+
+
+            } catch (error) {
+                console.error("Error al guardar la inscripción en Firestore:", error);
+                showStatus(`Error al registrar: ${error.message}`, false);
+            }
+        });
+
+        // 4. Listener para el botón de exportar
+        btnExportar.addEventListener('click', () => {
+            // Se usa el lastFormData que incluye el análisis si se generó antes de la inscripción
+            if (lastFormData) {
+                generarPDF(lastFormData);
+            } else {
+                showStatus("Debe completar una inscripción primero para generar el recibo.", false);
+            }
+        });
+        
+        // 5. Función LLM para Análisis de Riesgo Estructural (Gemini API)
+        const analyzeStructuralRisk = async (nombre, actividad, comentarios) => {
+            analysisLoader.classList.remove('hidden');
+            analysisResultDiv.innerHTML = '';
+            
+            // System Instruction: Rol y formato de respuesta
+            const systemPrompt = `Actúa como un analista legal y fiscal especializado en MiPymes en México. Tu objetivo es proporcionar una recomendación concisa y profesional.
+            
+            1. Analiza la 'Actividad Económica' y los 'Comentarios' del empresario.
+            2. Identifica el 'Riesgo Estructural' más crítico entre: 'Fiscal/Legal', 'Laboral' o 'Ciberseguridad/Digital'.
+            3. Escribe un análisis breve (máximo 4 oraciones) justificando por qué este riesgo es el más urgente para esa MiPyme.
+            4. El resultado debe ser profesional, directo y estar basado en información actual (usa la herramienta de búsqueda).
+            5. No uses encabezados ni listas. Ve directo al párrafo de análisis.`;
+
+            // User Query: La solicitud específica
+            const userQuery = `Empresario: ${nombre}. 
+            Actividad Económica: ${actividad}. 
+            Comentarios Adicionales: ${comentarios}.
+            
+            Realiza el análisis y la justificación.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                // Habilitar Google Search grounding para información actualizada (MANDATORIO)
+                tools: [{ "google_search": {} }], 
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            const options = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            };
+
+            try {
+                const response = await exponentialBackoffFetch(GEMINI_API_URL, options);
+                const result = await response.json();
+                
+                const candidate = result.candidates?.[0];
+                let analysisText = "No se pudo generar el análisis. Inténtelo de nuevo.";
+                let sourcesHtml = '';
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    analysisText = candidate.content.parts[0].text;
+                    lastAnalysisText = analysisText; // Guardar el texto del análisis
+                    
+                    // Extracción de fuentes
+                    let sources = [];
+                    const groundingMetadata = candidate.groundingMetadata;
+                    if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                        sources = groundingMetadata.groundingAttributions
+                            .map(attribution => ({
+                                uri: attribution.web?.uri,
+                                title: attribution.web?.title,
+                            }))
+                            .filter(source => source.uri && source.title);
+
+                        if (sources.length > 0) {
+                            sourcesHtml = '<div class="mt-4 pt-2 border-t border-gray-200 text-xs text-gray-700">';
+                            sourcesHtml += '<strong>Fuentes (para el análisis):</strong><ul class="list-disc list-inside space-y-1">';
+                            // Limitar a 3 fuentes
+                            sources.slice(0, 3).forEach((source) => {
+                                sourcesHtml += `<li><a href="${source.uri}" target="_blank" class="hover:underline">${source.title}</a></li>`;
+                            });
+                            sourcesHtml += '</ul></div>';
+                        }
+                    }
+                }
+
+                // Mostrar el resultado en el div
+                analysisResultDiv.innerHTML = `
+                    <div class="bg-custom-beige p-4 rounded-lg shadow-inner mt-4 text-custom-blue border border-custom-gold">
+                        <h4 class="font-bold mb-2 text-xl text-custom-gold">Análisis de Riesgo Estructural</h4>
+                        <p>${analysisText}</p>
+                        ${sourcesHtml}
+                    </div>
+                `;
+                
+            } catch (error) {
+                console.error("Error en la llamada a la API de Gemini:", error);
+                analysisResultDiv.innerHTML = `
+                    <div class="bg-red-200 p-3 rounded-lg mt-4 text-red-800">
+                        Hubo un error al generar el análisis. Por favor, intente de nuevo.
+                    </div>
+                `;
+            } finally {
+                analysisLoader.classList.add('hidden');
+            }
+        };
+
+
+        // 6. Listener para el botón de análisis
+        btnAnalyze.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Obtener los datos necesarios
+            const nombre = document.getElementById('nombre').value;
+            const actividad = document.getElementById('actividad').value;
+            // No se necesita comentarios para iniciar el análisis, pero se usa en el prompt
+            const comentarios = document.getElementById('comentarios').value; 
+
+            if (!nombre || !actividad) {
+                showStatus("Por favor, ingrese su Nombre Completo y Actividad Económica para generar el análisis.", false);
+                return;
+            }
+
+            // Ocultar mensaje de estado temporalmente y generar análisis
+            statusMessage.classList.add('hidden'); 
+            analysisResultDiv.innerHTML = '';
+            
+            // Llamar a la función LLM
+            analyzeStructuralRisk(nombre, actividad, comentarios);
+        });
+    </script>
+</body>
+</html>
